@@ -27,6 +27,10 @@ to use in the AAP Inventory Source, start a bash session within it, manually set
 
 Provided you see JSON output, then it should work fine within AAP. 
 
-In my situation I encountered a month's worth of problems that ultimately were resolved by changing teh credential used, 
+In my situation I encountered a month's worth of problems that ultimately were resolved by changing the credential used, 
 then switching back to the original. Even RH support had no clue why.
   
+Something to note: The job can run inside AAP and if say there's an issue communicating with the DB, or the credentials 
+supplied are incorrect or for whatever reason it cannot connect to teh database.. AAP's error (ansible-inventory actually)
+will give no indication that there's an issue like that. My RH guy submitted an RFE to get the error handling tweaked for this
+but for now it'll only return that it expected data on line 1, column 1 and got nothing.
