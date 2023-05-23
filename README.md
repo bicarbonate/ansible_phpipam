@@ -5,10 +5,16 @@ Using this script has a couple requirements:
 
 1. Ansible Automation Platform controller, Tower or AWX
 2. Creating a Custom credential type that includes the following Env Injectors:
-    env:
-  IPAM_DBHOST: '{{ host }}'
-  IPAM_DBPASS: '{{ password }}'
-  IPAM_DBUSER: '{{ username }}'
+   
+    `env:`
+    
+  `IPAM_DBHOST: '{{ host }}'`
+  
+  `IPAM_DBPASS: '{{ password }}'`
+  
+  `IPAM_DBUSER: '{{ username }}'`
+ 
+  
 3. You create a Project, then an Inventory with a source `from Project`
 4. On the PhpIpam side: I am using custom fields in lieu of tags to filter IPAddresses that I want to manage.
     So there are custom_fields on IPAddresses and Subnets, so I can filter based on both. Your situation
